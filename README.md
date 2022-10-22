@@ -5,7 +5,7 @@
 </p>
 
 <h1 align="center">
-  Medusa Next.js Starter
+  Aurore Medusa Marketplace Next.js Starter
 </h1>
 
 <p align="center">
@@ -145,3 +145,25 @@ After this you will need to set up Algolia with your Medusa server, and then you
 - [Website](https://nextjs.org/)
 - [GitHub](https://github.com/vercel/next.js)
 - [Documentation](https://nextjs.org/docs)
+
+## Custom Medusa and CMS Endpoints
+
+### CMS
+
+```bash
+# All Pages:
+# https://aurore-cms.herokuapp.com/api/pages/v2/pages
+# Home Page
+# https://aurore-cms.herokuapp.com/api/pages/v2/pages/3/
+```
+
+### Medusa
+
+```bash
+# Backend: https://aurore-backend.herokuapp.com
+# GET /store/brand : Get all brands
+# GET /store/brand/:id : Get a brand with id
+# POST /store/brand : Create Brand
+# PUT /store/brand/:id/ : Update brand
+# DELETE /store/brand/:id : Delete a brand with id
+```
