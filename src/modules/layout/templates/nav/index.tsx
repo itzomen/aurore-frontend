@@ -72,7 +72,8 @@ const Nav = () => {
 
           <div className="flex items-center h-full">
             <Link href="/">
-              <a className="text-xl-semi uppercase">AURORE</a>
+              {/* <a className="text-xl-semi uppercase">AURORE</a> */}
+              <img width={120} src="/logo.svg" alt="aurore logo" />
             </Link>
           </div>
 
