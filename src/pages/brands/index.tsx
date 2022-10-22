@@ -73,7 +73,7 @@ const Brands: NextPageWithLayout = ({ data }: any) => {
             return (
               <Card
                 key={index}
-                path={`/brands/${brand?.id}`}
+                path={`/brands/${brand?.handle}`}
                 brandImage="/images/image1.jpg"
                 brandName={brand?.name}
               />
