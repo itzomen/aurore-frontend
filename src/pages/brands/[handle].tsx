@@ -54,9 +54,9 @@ const BrandsPage: NextPageWithLayout = ({ data }: any) => {
       </div>
 
       <div className={styles.tabs__container}>
-        <Tabs>
-          {data.brands &&
-            data.brands.brand_collections.map(
+        {data.brand && (
+          <Tabs>
+            {data.brand.brand_collections.map(
               (collection: any, index: number) => {
                 return (
                   <Tab key={index + collection.title} title={collection.title}>
@@ -65,7 +65,7 @@ const BrandsPage: NextPageWithLayout = ({ data }: any) => {
                 )
               }
             )}
-          {/* <Tab title="Category One">
+            {/* <Tab title="Category One">
             <div className="brands__list diff">
               {BrandsData &&
                 BrandsData.length > 0 &&
@@ -92,7 +92,8 @@ const BrandsPage: NextPageWithLayout = ({ data }: any) => {
           <Tab title="Category Four">
             <div></div>
           </Tab> */}
-        </Tabs>
+          </Tabs>
+        )}
       </div>
     </div>
   )
@@ -114,7 +115,7 @@ export async function getStaticPaths() {
   )
   const data = res
   const paths = data?.brands.map((brand: any) => ({
-    params: { handle: brand.id },
+    params: { handle: brand.handle },
   }))
 
   // We'll pre-render only these paths at build time.
