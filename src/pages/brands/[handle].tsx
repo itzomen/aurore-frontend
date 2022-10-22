@@ -8,6 +8,8 @@ import styles from "./brands.module.css"
 import Button from "@modules/common/components/button"
 import { BrandsData } from "./brandsData"
 import Card from "@modules/layout/templates/brand/Card"
+import Tabs from "@modules/layout/templates/tabs/Tabs"
+import Tab from "@modules/layout/templates/tabs/Tab"
 
 const BrandsPage: NextPageWithLayout = () => {
   return (
@@ -41,21 +43,36 @@ const BrandsPage: NextPageWithLayout = () => {
         </div>
       </div>
 
-      <div className="brands__list diff">
-        {BrandsData &&
-          BrandsData.length > 0 &&
-          BrandsData.map((brand, index) => {
-            return (
-              <Card
-                key={index}
-                path={`/brand/${brand.brandhandle}`}
-                brandImage={brand.brandImage}
-                brandName={brand.brandName}
-                isProduct={true}
-                price={45}
-              />
-            )
-          })}
+      <div className={styles.tabs__container}>
+        <Tabs>
+          <Tab title="Category One">
+            <div className="brands__list diff">
+              {BrandsData &&
+                BrandsData.length > 0 &&
+                BrandsData.map((brand, index) => {
+                  return (
+                    <Card
+                      key={index}
+                      path={`/brand/${brand.brandhandle}`}
+                      brandImage={brand.brandImage}
+                      brandName={brand.brandName}
+                      isProduct={true}
+                      price={45}
+                    />
+                  )
+                })}
+            </div>
+          </Tab>
+          <Tab title="Category Two">
+            <div></div>
+          </Tab>
+          <Tab title="Category Three">
+            <div></div>
+          </Tab>
+          <Tab title="Category Four">
+            <div></div>
+          </Tab>
+        </Tabs>
       </div>
     </div>
   )

@@ -43,7 +43,7 @@
   display: grid;
   display: -ms-grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  padding: 2rem 4vw;
+  padding: 2rem 0;
   gap: 1.5rem;
 }
 
