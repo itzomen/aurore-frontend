@@ -6,7 +6,7 @@ import Layout from "@modules/layout/templates"
 // stylesheet
 import styles from "./brands.module.css"
 import Button from "@modules/common/components/button"
-import { BrandsData } from "./brandsData"
+import { BrandsData } from "../../assets/brandsData"
 import Card from "@modules/layout/templates/brand/Card"
 import Tabs from "@modules/layout/templates/tabs/Tabs"
 import Tab from "@modules/layout/templates/tabs/Tab"

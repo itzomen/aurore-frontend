@@ -4,7 +4,7 @@ import { NextPageWithLayout } from "types/global"
 import Layout from "@modules/layout/templates"
 import { motion } from "framer-motion"
 
-import { BrandsData } from "./brandsData"
+import { BrandsData } from "../../assets/brandsData"
 import Card from "@modules/layout/templates/brand/Card"
 
 const Brands: NextPageWithLayout = () => {
