@@ -1,5 +1,5 @@
 import Head from "@modules/common/components/head"
-import { ReactElement } from "react"
+import { ReactElement, useEffect, useState } from "react"
 import { NextPageWithLayout } from "types/global"
 import Layout from "@modules/layout/templates"
 import { motion } from "framer-motion"
@@ -18,19 +18,27 @@ export async function getStaticProps() {
     {},
     config
   )
-  const brands = res
+  const data = res
 
   return {
     props: {
-      brands,
+      data,
     },
   }
 }
 
-const Brands: NextPageWithLayout = ({ brands }: any) => {
+const Brands: NextPageWithLayout = ({ data }: any) => {
   // @NOTE:
   // name, handle, brandImages, description, collections
-  console.log("BRANDS: ", brands)
+  const [brands, setBrands] = useState([])
+
+  useEffect(() => {
+    if (data && data.brands) {
+      setBrands(data.brands)
+    }
+  }, [data])
+
+  console.log(brands)
 
   return (
     <>
@@ -47,7 +55,7 @@ const Brands: NextPageWithLayout = ({ brands }: any) => {
       </div>
 
       <div style={{ padding: "0 4vw" }} className="brands__list">
-        {BrandsData &&
+        {/* {BrandsData &&
           BrandsData.length > 0 &&
           BrandsData.map((brand, index) => {
             return (
@@ -56,6 +64,18 @@ const Brands: NextPageWithLayout = ({ brands }: any) => {
                 path={`/brand/${brand.brandhandle}`}
                 brandImage={brand.brandImage}
                 brandName={brand.brandName}
+              />
+            )
+          })} */}
+        {brands &&
+          brands.length > 0 &&
+          brands.map((brand, index) => {
+            return (
+              <Card
+                key={index}
+                path={`/brand/${brand?.handle}`}
+                brandImage="/images/image1.jpg"
+                brandName={brand?.name}
               />
             )
           })}
