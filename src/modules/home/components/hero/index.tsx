@@ -3,10 +3,13 @@ import Image from "next/image"
 
 const Hero = () => {
   return (
-    <div className="h-[90vh] w-full relative">
-      <div className="text-white absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:text-left small:justify-end small:items-start small:p-32">
-        <h1 className="text-2xl-semi mb-4 drop-shadow-md shadow-black">
-          Summer styles are finally here
+    <div className="h-[80vh] hero w-full relative">
+      <div className="mt-5 text-white absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:text-left small:justify-end small:items-start small:p-32">
+        <h1
+          style={{ lineHeight: "1.1" }}
+          className="text-6xl max-w-[45rem] mb-4 drop-shadow-md shadow-black font-semibold headline-text"
+        >
+          Aurore Multi-vendor Marketplace
         </h1>
         <p className="text-base-regular max-w-[32rem] mb-6 drop-shadow-md shadow-black">
           This year, our new summer collection will shelter you from the harsh

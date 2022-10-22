@@ -7,23 +7,24 @@ module.exports = {
   theme: {
     extend: {
       transitionProperty: {
-        "width": "width",
-        "spacing": 'margin, padding',
+        width: "width",
+        spacing: "margin, padding",
       },
       maxWidth: {
         "8xl": "100rem",
       },
       screens: {
         "2xsmall": "320px",
-        "xsmall": "512px",
-        "small": "1024px",
-        "medium": "1280px",
-        "large": "1440px",
-        "xlarge": "1680px",
+        xsmall: "512px",
+        small: "1024px",
+        medium: "1280px",
+        large: "1440px",
+        xlarge: "1680px",
         "2xlarge": "1920px",
       },
       fontFamily: {
         sans: [
+          "Poppins",
           "Inter",
           "-apple-system",
           "BlinkMacSystemFont",
