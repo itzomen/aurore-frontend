@@ -5,7 +5,7 @@ import axios from "axios"
 export const axiosRequest = async (
   method: string,
   url: string,
-  data: any,
+  data?: any,
   headers?: any
 ) => {
   try {
@@ -22,7 +22,7 @@ export const axiosRequest = async (
     console.log("headers: ", headers)
     console.log("response: ", response)
     console.groupEnd()
-    return response.data
+    return response?.data
   } catch (error) {
     console.group("AXIOS_REQUEST_ERROR")
     console.log("method: ", method)
