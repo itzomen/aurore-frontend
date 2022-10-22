@@ -3,16 +3,18 @@ import { useInView } from "framer-motion"
 import Link from "next/link"
 
 // stylesheet
-import styles from "./brand.module.css"
+import styles from "./card.module.css"
 import NewTab from "@modules/common/icons/new-tab"
 
 type Props = {
   brandName: string
   brandImage: string
   path: string
+  isProduct?: boolean
+  price?: number
 }
 
-const Brand = ({ brandName, brandImage, path }: Props) => {
+const Card = ({ brandName, brandImage, price, path, isProduct }: Props) => {
   const ref = useRef(null)
   const isInView = useInView(ref)
 
@@ -41,9 +43,12 @@ const Brand = ({ brandName, brandImage, path }: Props) => {
           </Link>
         </div>
       </div>
-      <h2>{brandName}</h2>
+      <div className={`${isProduct ? styles.spaced : ""}`}>
+        <h2>{brandName}</h2>
+        {isProduct === true && <h2>${price}</h2>}
+      </div>
     </div>
   )
 }
 
-export default Brand
+export default Card

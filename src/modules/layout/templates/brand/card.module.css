@@ -75,3 +75,11 @@
   text-align: center;
   margin: 1rem 0;
 }
+
+.spaced {
+  display: flex;
+  display: -ms-flexbox;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}

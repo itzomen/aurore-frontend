@@ -1,0 +1,59 @@
+.brands__details .hero {
+  display: flex;
+  display: ms-flexbox;
+  gap: 2rem;
+  padding: 2rem 4vw;
+}
+
+.brands__details .hero > div {
+  flex: 1;
+  -ms-flex: 1;
+}
+
+.brands__details .hero h2 {
+  color: #0d1317;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 1.1;
+  font-family: "Anek Telugu", sans-serif;
+}
+
+.brands__details .hero .brand__info {
+  display: flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  justify-content: center;
+}
+
+.brands__details .hero h4 {
+  color: var(--gray-color);
+  font-size: 1.3rem;
+}
+
+.brands__details .hero img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  -o-object-fit: cover;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.brands__details .banner__image {
+  display: flex;
+  display: -ms-flexbox;
+  gap: 1rem;
+}
+
+.brands__details .banner__image > div {
+  flex: 1;
+  -ms-flex: 1;
+}
+
+.brands__details .banner__image > div:nth-child(1) {
+  margin-top: 2rem;
+}

@@ -2,10 +2,10 @@ import Head from "@modules/common/components/head"
 import { ReactElement } from "react"
 import { NextPageWithLayout } from "types/global"
 import Layout from "@modules/layout/templates"
-import Brand from "@modules/layout/templates/brand/Brand"
 import { motion } from "framer-motion"
 
 import { BrandsData } from "./brandsData"
+import Card from "@modules/layout/templates/brand/Card"
 
 const Brands: NextPageWithLayout = () => {
   // @NOTE:
@@ -29,7 +29,7 @@ const Brands: NextPageWithLayout = () => {
           BrandsData.length > 0 &&
           BrandsData.map((brand, index) => {
             return (
-              <Brand
+              <Card
                 key={index}
                 path={`/brand/${brand.brandhandle}`}
                 brandImage={brand.brandImage}

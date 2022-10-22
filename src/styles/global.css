@@ -64,6 +64,9 @@
   margin-top: 3rem;
 }
 
+.brands__list.diff > div:nth-child(even) {
+  margin-top: 0;
+}
 
 @media screen and (max-width: 1000px) {
   .brands__list {
