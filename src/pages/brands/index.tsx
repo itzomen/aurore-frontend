@@ -4,7 +4,7 @@ import { NextPageWithLayout } from "types/global"
 import Layout from "@modules/layout/templates"
 import { motion } from "framer-motion"
 
-import { BrandsData } from "../../assets/brandsData"
+// import { BrandsData } from "../../assets/brandsData"
 import Card from "@modules/layout/templates/brand/Card"
 import { axiosRequest } from "@lib/axios/Axios"
 
@@ -73,7 +73,7 @@ const Brands: NextPageWithLayout = ({ data }: any) => {
             return (
               <Card
                 key={index}
-                path={`/brand/${brand?.handle}`}
+                path={`/brands/${brand?.id}`}
                 brandImage="/images/image1.jpg"
                 brandName={brand?.name}
               />
