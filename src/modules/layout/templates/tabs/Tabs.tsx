@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import TabHead from "./TabHead";
+import React, { useState } from "react"
+import TabHead from "./TabHead"
 
 // styles import
-import styles from "./tab.module.css";
+import styles from "./tab.module.css"
 
 type ChildrenProp = {
-  children: React.ReactElement[];
-};
+  children: React.ReactElement[]
+}
 
 const Tabs: React.FC<ChildrenProp> = ({ children }) => {
-  const [selectedTab, setSelectedTab] = useState(0);
+  const [selectedTab, setSelectedTab] = useState(0)
 
   return (
     <div>
@@ -17,7 +17,7 @@ const Tabs: React.FC<ChildrenProp> = ({ children }) => {
         {children.map((item, index) => (
           <TabHead
             key={index}
-            title={item.props.title}
+            title={item.props?.title}
             index={index}
             btnWidth={item.props.btnWidth}
             setSelectedTab={setSelectedTab}
@@ -27,7 +27,7 @@ const Tabs: React.FC<ChildrenProp> = ({ children }) => {
       </ul>
       {children[selectedTab]}
     </div>
-  );
-};
+  )
+}
 
-export default Tabs;
+export default Tabs

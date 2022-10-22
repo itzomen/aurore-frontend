@@ -12,11 +12,12 @@ import Button from "@modules/common/components/button"
 import Tabs from "@modules/layout/templates/tabs/Tabs"
 import Tab from "@modules/layout/templates/tabs/Tab"
 import { axiosRequest } from "@lib/axios/Axios"
+import { medusaClient } from "@lib/config"
 
 const BrandsPage: NextPageWithLayout = ({ data }: any) => {
-  console.log(data)
-
   const router = useRouter()
+
+  console.log("BRANDS_DETAILS: ", data)
 
   // If the page is not yet generated, this will be displayed
   // initially until getStaticProps() finishes running
@@ -57,7 +58,11 @@ const BrandsPage: NextPageWithLayout = ({ data }: any) => {
         {data.brand && (
           <Tabs>
             {data.brand.brand_collections.map(
-              (collection: any, index: number) => {
+              async (collection: any, index: number) => {
+                const data = await medusaClient.products.list({})
+
+                console.log("DATA: ", data)
+
                 return (
                   <Tab key={index + collection.title} title={collection.title}>
                     <div></div>
@@ -109,7 +114,7 @@ export async function getStaticPaths() {
   }
   const res = await axiosRequest(
     "GET",
-    "https://aurore-backend.herokuapp.com/store/brand",
+    `${process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL}/store/brand`,
     {},
     config
   )
@@ -129,7 +134,7 @@ export async function getStaticProps(context: any) {
   }
   const res = await axiosRequest(
     "GET",
-    `https://aurore-backend.herokuapp.com/store/brands/${context.params.handle}`,
+    `${process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL}/store/brands/${context.params.handle}`,
     {},
     config
   )

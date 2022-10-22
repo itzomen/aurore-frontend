@@ -14,7 +14,7 @@ export async function getStaticProps() {
   }
   const res = await axiosRequest(
     "GET",
-    "https://aurore-backend.herokuapp.com/store/brand",
+    `${process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL}/store/brand`,
     {},
     config
   )
@@ -37,8 +37,6 @@ const Brands: NextPageWithLayout = ({ data }: any) => {
       setBrands(data.brands)
     }
   }, [data])
-
-  console.log(brands)
 
   return (
     <>
