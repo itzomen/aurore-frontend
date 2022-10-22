@@ -69,7 +69,7 @@ const Brands: NextPageWithLayout = ({ data }: any) => {
           })} */}
         {brands &&
           brands.length > 0 &&
-          brands.map((brand, index) => {
+          brands.map((brand: any, index) => {
             return (
               <Card
                 key={index}
