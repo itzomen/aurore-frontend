@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Anek+Telugu:wght@100;200;300;400;500;600&display=swap");
 
-.hero::before {
+.home-hero {
+  position: relative;
+}
+
+.home-hero::before {
   content: "";
   background: rgba(0, 0, 0, 0.6);
   width: 100%;
@@ -9,6 +13,7 @@
   left: 0;
   top: 0;
   isolation: isolate;
+  z-index: 1;
 }
 
 /** SHOP SCREENS */

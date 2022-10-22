@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const Hero = () => {
   return (
-    <div className="h-[80vh] hero w-full relative">
+    <div className="h-[85vh] home-hero w-full relative">
       <div className="mt-5 text-white absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:text-left small:justify-end small:items-start small:p-32">
         <h1
           style={{ lineHeight: "1.1" }}
@@ -11,7 +11,7 @@ const Hero = () => {
         >
           Aurore Multi-vendor Marketplace
         </h1>
-        <p className="text-base-regular max-w-[32rem] mb-6 drop-shadow-md shadow-black">
+        <p className="text-xl max-w-[32rem] mb-6 drop-shadow-md shadow-black">
           This year, our new summer collection will shelter you from the harsh
           elements of a world that doesn&apos;t care if you live or die.
         </p>
