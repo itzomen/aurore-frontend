@@ -163,6 +163,7 @@ After this you will need to set up Algolia with your Medusa server, and then you
 # Backend: https://aurore-backend.herokuapp.com
 # GET /store/brand : Get all brands
 # GET /store/brand/:id : Get a brand with id
+# GET /store/brands/:handle : Get a brand with handle 
 # POST /store/brand : Create Brand
 # PUT /store/brand/:id/ : Update brand
 # DELETE /store/brand/:id : Delete a brand with id
