@@ -38,6 +38,8 @@ const Brands: NextPageWithLayout = ({ data }: any) => {
     }
   }, [data])
 
+  console.log(process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL)
+
   return (
     <>
       <Head

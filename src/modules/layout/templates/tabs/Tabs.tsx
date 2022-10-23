@@ -5,7 +5,7 @@ import TabHead from "./TabHead"
 import styles from "./tab.module.css"
 
 type ChildrenProp = {
-  children: React.ReactElement[]
+  children?: React.ReactElement[]
 }
 
 const Tabs: React.FC<ChildrenProp> = ({ children }) => {
@@ -14,18 +14,19 @@ const Tabs: React.FC<ChildrenProp> = ({ children }) => {
   return (
     <div>
       <ul className={styles.tab__head__list}>
-        {children.map((item, index) => (
-          <TabHead
-            key={index}
-            title={item.props?.title}
-            index={index}
-            btnWidth={item.props.btnWidth}
-            setSelectedTab={setSelectedTab}
-            selectedTab={selectedTab}
-          />
-        ))}
+        {children &&
+          children.map((item, index) => (
+            <TabHead
+              key={index}
+              title={item?.props?.title || ""}
+              index={index}
+              // btnWidth={item?.props?.btnWidth || 40}
+              setSelectedTab={setSelectedTab}
+              selectedTab={selectedTab}
+            />
+          ))}
       </ul>
-      {children[selectedTab]}
+      {children && children[selectedTab]}
     </div>
   )
 }

@@ -13,9 +13,12 @@ import Tabs from "@modules/layout/templates/tabs/Tabs"
 import Tab from "@modules/layout/templates/tabs/Tab"
 import { axiosRequest } from "@lib/axios/Axios"
 import { medusaClient } from "@lib/config"
+import Card from "@modules/layout/templates/brand/Card"
 
 const BrandsPage: NextPageWithLayout = ({ data }: any) => {
   const router = useRouter()
+
+  console.log(process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL)
 
   console.log("BRANDS_DETAILS: ", data)
 
@@ -58,16 +61,43 @@ const BrandsPage: NextPageWithLayout = ({ data }: any) => {
         {data.brand && (
           <Tabs>
             {data.brand.brand_collections.map(
-              async (collection: any, index: number) => {
-                const data = await medusaClient.products.list({})
+              (collection: any, index: number) => {
+                medusaClient.products
+                  .list({
+                    collection_id: [collection.id],
+                  })
+                  .then((data) => {
+                    console.log("TEST: ", data.products)
 
-                console.log("DATA: ", data)
+                    console.log("HANDLE: ", collection.title)
 
-                return (
-                  <Tab key={index + collection.title} title={collection.title}>
-                    <div></div>
-                  </Tab>
-                )
+                    return (
+                      <Tab
+                        key={collection.handle}
+                        title={collection.title || ""}
+                      >
+                        <div>
+                          <h1>{collection.title}</h1>
+                          {data &&
+                            data.products.length > 0 &&
+                            data.products.map((p) => (
+                              <Card
+                                key={index}
+                                path={`/brand/${collection.id}product/${p?.title}`}
+                                brandImage={p?.title}
+                                brandName={p?.title}
+                                isProduct={true}
+                                price={45}
+                              />
+                            ))}
+                        </div>
+                      </Tab>
+                    )
+                  })
+                  .catch((err) => {
+                    console.log(err)
+                    return null
+                  })
               }
             )}
             {/* <Tab title="Category One">
@@ -108,13 +138,34 @@ BrandsPage.getLayout = (page: ReactElement) => {
   return <Layout>{page}</Layout>
 }
 
+export async function getStaticProps(context: any) {
+  console.log(process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL)
+
+  const config = {
+    "Content-Type": "application/json",
+  }
+  const res = await axiosRequest(
+    "GET",
+    `https://aurore-backend.herokuapp.com/store/brands/${context.params.handle}`,
+    {},
+    config
+  )
+  const data = res
+
+  return {
+    props: {
+      data,
+    },
+  }
+}
+
 export async function getStaticPaths() {
   const config = {
     "Content-Type": "application/json",
   }
   const res = await axiosRequest(
     "GET",
-    `${process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL}/store/brand`,
+    `https://aurore-backend.herokuapp.com/store/brand`,
     {},
     config
   )
@@ -126,25 +177,6 @@ export async function getStaticPaths() {
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
   return { paths, fallback: true }
-}
-
-export async function getStaticProps(context: any) {
-  const config = {
-    "Content-Type": "application/json",
-  }
-  const res = await axiosRequest(
-    "GET",
-    `${process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL}/store/brands/${context.params.handle}`,
-    {},
-    config
-  )
-  const data = res
-
-  return {
-    props: {
-      data,
-    },
-  }
 }
 
 export default BrandsPage
