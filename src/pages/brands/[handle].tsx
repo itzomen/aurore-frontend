@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react"
 import { ReactElement } from "react"
 import { NextPageWithLayout } from "types/global"
@@ -15,12 +16,12 @@ import { axiosRequest } from "@lib/axios/Axios"
 import { medusaClient } from "@lib/config"
 import Card from "@modules/layout/templates/brand/Card"
 
-const BrandsPage: NextPageWithLayout = ({ data }: any) => {
+const BrandsPage: NextPageWithLayout = ({ brand }: any) => {
   const router = useRouter()
 
   console.log(process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL)
 
-  console.log("BRANDS_DETAILS: ", data)
+  console.log("BRANDS_DETAILS: ", JSON.stringify(brand, null, 2))
 
   // If the page is not yet generated, this will be displayed
   // initially until getStaticProps() finishes running
@@ -31,10 +32,10 @@ const BrandsPage: NextPageWithLayout = ({ data }: any) => {
   return (
     <div className={styles.brands__details}>
       <div className={styles.hero}>
-        {data.brand && (
+        {brand && (
           <div className={styles.brand__info}>
-            <h2>{data?.brand?.name}</h2>
-            <h4>{data?.brand?.description}</h4>
+            <h2>{brand?.name}</h2>
+            <h4>{brand?.description}</h4>
             <Button
               style={{
                 marginTop: "2rem",
@@ -58,75 +59,32 @@ const BrandsPage: NextPageWithLayout = ({ data }: any) => {
       </div>
 
       <div className={styles.tabs__container}>
-        {data.brand && (
+        {brand && (
           <Tabs>
-            {data.brand.brand_collections.map(
-              (collection: any, index: number) => {
-                medusaClient.products
-                  .list({
-                    collection_id: [collection.id],
-                  })
-                  .then((data) => {
-                    console.log("TEST: ", data.products)
-
-                    console.log("HANDLE: ", collection.title)
-
-                    return (
-                      <Tab
-                        key={collection.handle}
-                        title={collection.title || ""}
-                      >
-                        <div>
-                          <h1>{collection.title}</h1>
-                          {data &&
-                            data.products.length > 0 &&
-                            data.products.map((p) => (
-                              <Card
-                                key={index}
-                                path={`/brand/${collection.id}product/${p?.title}`}
-                                brandImage={p?.title}
-                                brandName={p?.title}
-                                isProduct={true}
-                                price={45}
-                              />
-                            ))}
-                        </div>
-                      </Tab>
-                    )
-                  })
-                  .catch((err) => {
-                    console.log(err)
-                    return null
-                  })
-              }
-            )}
-            {/* <Tab title="Category One">
-            <div className="brands__list diff">
-              {BrandsData &&
-                BrandsData.length > 0 &&
-                BrandsData.map((brand, index) => {
-                  return (
-                    <Card
-                      key={index}
-                      path={`/brand/${brand.brandhandle}`}
-                      brandImage={brand.brandImage}
-                      brandName={brand.brandName}
-                      isProduct={true}
-                      price={45}
-                    />
-                  )
-                })}
-            </div>
-          </Tab>
-          <Tab title="Category Two">
-            <div></div>
-          </Tab>
-          <Tab title="Category Three">
-            <div></div>
-          </Tab>
-          <Tab title="Category Four">
-            <div></div>
-          </Tab> */}
+            {brand?.brand_collections.map((collection: any, index: number) => {
+              return (
+                <Tab key={collection.handle} title={collection.title}>
+                  <div>
+                    {collection &&
+                      collection.products.length > 0 &&
+                      collection.products.map((p: any) => (
+                        <Card
+                          key={index}
+                          path={`/product/${p?.thandle}`}
+                          brandImage={p?.thumbnail}
+                          brandName={p?.title}
+                          isProduct={true}
+                          price={
+                            // get the price from the variant
+                            // if variant is not available, then "0.00"
+                            p?.variants[0]?.prices[0]?.amount || 0.0
+                          }
+                        />
+                      ))}
+                  </div>
+                </Tab>
+              )
+            })}
           </Tabs>
         )}
       </div>
@@ -150,11 +108,19 @@ export async function getStaticProps(context: any) {
     {},
     config
   )
-  const data = res
+  // for all data.brand.brand_collections
+  // fetch and add products to each collection
+  for (let i = 0; i < res?.brand?.brand_collections?.length; i++) {
+    const collection = res?.brand?.brand_collections[i]
+    const products = await medusaClient.products.list({
+      collection_id: [collection.id],
+    })
+    res.brand.brand_collections[i].products = products.products
+  }
 
   return {
     props: {
-      data,
+      brand: res.brand,
     },
   }
 }
