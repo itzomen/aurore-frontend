@@ -18,6 +18,8 @@ Medusa is an open-source headless commerce engine that enables developers to cre
 
 ![aurore-cover](https://github.com/traleor/aurore-frontend/blob/main/public/cover.png)
 
+## [Live Demo](https://aurore-storefront.herokuapp.com/)
+
 Aurore is a Multi-vendor marketplace built using Medusa, Wagtail for the CMS and Next.Js for the Front-end.
 This marketplace is easy to maintain and update to the latest Medusa version as it is built entirely with the tools provided by Medusa (no third-party included).
 
@@ -32,6 +34,8 @@ This marketplace is easy to maintain and update to the latest Medusa version as 
 | Egbe Nesta  | [Github](https://github.com/nestaenow)   | [Twitter](https://twitter.com/nestaenow)     | `NestaEnow#4271`     |
 | Meli Imelda | [Github](https://github.com/meli-imelda) | [Twitter](https://twitter.com/Meli_Tchouala) | `MeliImelda#2152`    |
 
+### Preview
+![Demo]()
 
 The Medusa Next.js Starter is built with:
 
