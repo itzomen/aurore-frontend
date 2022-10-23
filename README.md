@@ -47,7 +47,7 @@ The Medusa Next.js Starter is built with:
 Navigate into your projects directory and get your enviroment variables ready:
 
 ```shell
-cd nextjs-starter-medusa/
+cd aurore-frontend
 mv .env.template .env.local
 ```
 
