@@ -19,7 +19,7 @@ const Hero = () => {
         <UnderlineLink href="/store">Explore products</UnderlineLink>
       </div>
       <Image
-        src="/hero.jpg"
+        src="/hero_image.png"
         layout="fill"
         loading="eager"
         priority={true}
