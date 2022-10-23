@@ -38,6 +38,9 @@ const Brands: NextPageWithLayout = ({ data }: any) => {
     }
   }, [data])
 
+  //
+  const images = ["cta_one.jpg", "cta_two.jpg", "cta_three.jpg", "cta_four.jpg"]
+
   console.log(process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL)
 
   return (
@@ -74,7 +77,11 @@ const Brands: NextPageWithLayout = ({ data }: any) => {
               <Card
                 key={index}
                 path={`/brands/${brand?.handle}`}
-                brandImage="/images/image1.jpg"
+                // select a random image for now
+                // backend not returning image, needs to be fixed
+                brandImage={`/${
+                  images[Math.floor(Math.random() * images.length)]
+                }`}
                 brandName={brand?.name}
               />
             )

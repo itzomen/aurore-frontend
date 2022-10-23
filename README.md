@@ -1,37 +1,37 @@
 <p align="center">
-  <a href="https://www.medusajs.com">
-    <img alt="Medusa" src="https://user-images.githubusercontent.com/7554214/153162406-bf8fd16f-aa98-4604-b87b-e13ab4baf604.png" width="100" />
+  <a href="https://wagtail.org/">
+    <img alt="Wagtail" src="https://wagtail.org/static/img/wagtail.dbf60545a188.svg" width="100" />
   </a>
 </p>
 
 <h1 align="center">
-  Aurore Medusa Marketplace Next.js Starter
+  Aurore Storefront Starter
 </h1>
 
 <p align="center">
-Medusa is an open-source headless commerce engine that enables developers to create amazing digital commerce experiences.
+Medusa is an open-source headless commerce engine that enables developers to create amazing digital commerce experiences. This CMS backend is used to illustrate how it can be integrated with Medusa Next.JS starter.
 </p>
 
-<p align="center">
-  <a href="https://github.com/medusajs/medusa/blob/master/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Medusa is released under the MIT license." />
-  </a>
-  <a href="https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" />
-  </a>
-  <a href="https://discord.gg/xpCwq3Kfn8">
-    <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Discord Chat" />
-  </a>
-  <a href="https://twitter.com/intent/follow?screen_name=medusajs">
-    <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Follow%20@medusajs" alt="Follow @medusajs" />
-  </a>
-</p>
-
-> **Prerequisites**: To use the starter you should have a Medusa server running locally on port 9000. Check out [medusa-starter-default](https://github.com/medusajs/medusa-starter-default) for a quick setup.
+> **Prerequisites**: To use the starter you should have the Aurore Medusa server running locally on port 9000 or deployed. Check out [aurore-medusa](https://github.com/traleor/aurore-medusa) for a quick setup.
 
 # Overview
 
-![next-starter](https://user-images.githubusercontent.com/45367945/182571697-a68c502f-5844-4eea-8735-7683f775ac8b.png)
+![aurore-cover](https://github.com/traleor/aurore-frontend/blob/main/public/cover.png)
+
+Aurore is a Multi-vendor marketplace built using Medusa, Wagtail for the CMS and Next.Js for the Front-end.
+This marketplace is easy to maintain and update to the latest Medusa version as it is built entirely with the tools provided by Medusa (no third-party included).
+
+## Participants:
+
+<!-- markdown table with the team infos -->
+
+| Name        | Github                                   | Twitter                                      | Discord              |
+| ----------- | ---------------------------------------- | -------------------------------------------- | -------------------- |
+| Peng Boris  | [Github](https://github.com/itzomen)     | [Twitter](https://twitter.com/itz_omen)      | `itzomen#4530`       |
+| Njoh Prince | [Github](https://github.com/NjohPrince)  | [Twitter](https://twitter.com/NjohNoh)       | `theunicorndev#2216` |
+| Egbe Nesta  | [Github](https://github.com/nestaenow)   | [Twitter](https://twitter.com/nestaenow)     | `NestaEnow#4271`     |
+| Meli Imelda | [Github](https://github.com/meli-imelda) | [Twitter](https://twitter.com/Meli_Tchouala) | `MeliImelda#2152`    |
+
 
 The Medusa Next.js Starter is built with:
 
@@ -146,7 +146,7 @@ After this you will need to set up Algolia with your Medusa server, and then you
 - [GitHub](https://github.com/vercel/next.js)
 - [Documentation](https://nextjs.org/docs)
 
-## Custom Medusa and CMS Endpoints
+## Custom [Aurore Medusa](https://github.com/traleor/aurore-medusa) and [CMS Endpoints](https://github.com/traleor/aurore-wagtail)
 
 ### CMS
 
@@ -163,7 +163,7 @@ After this you will need to set up Algolia with your Medusa server, and then you
 # Backend: https://aurore-backend.herokuapp.com
 # GET /store/brand : Get all brands
 # GET /store/brand/:id : Get a brand with id
-# GET /store/brands/:handle : Get a brand with handle 
+# GET /store/brands/:handle : Get a brand with handle
 # POST /store/brand : Create Brand
 # PUT /store/brand/:id/ : Update brand
 # DELETE /store/brand/:id : Delete a brand with id
