@@ -21,7 +21,7 @@ const BrandsPage: NextPageWithLayout = ({ brand }: any) => {
 
   console.log(process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL)
 
-  console.log("BRANDS_DETAILS: ", JSON.stringify(brand, null, 2))
+  // console.log("BRANDS_DETAILS: ", JSON.stringify(brand, null, 2))
 
   // If the page is not yet generated, this will be displayed
   // initially until getStaticProps() finishes running
