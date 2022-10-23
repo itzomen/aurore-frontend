@@ -31,7 +31,7 @@ This marketplace is easy to maintain and update to the latest Medusa version as 
 | Meli Imelda | [Github](https://github.com/meli-imelda) | [Twitter](https://twitter.com/Meli_Tchouala) | `MeliImelda#2152`    |
 
 ### Preview
-![Demo](https://traleor.com/docs/3/aurore-demo.gif)
+![aurore-demo](https://user-images.githubusercontent.com/61752841/197415990-5931a38b-9504-4238-b602-5784c0a11950.gif)
 
 The Medusa Next.js Starter is built with:
 
