@@ -79,7 +79,7 @@ const BrandsPage: NextPageWithLayout = ({ brand }: any) => {
                       collection.products.map((p: any) => (
                         <Card
                           key={index}
-                          path={`/product/${p?.handle}`}
+                          path={`/products/${p?.handle}`}
                           brandImage={p?.thumbnail}
                           brandName={p?.title}
                           isProduct={true}
