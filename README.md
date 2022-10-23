@@ -1,16 +1,12 @@
 <p align="center">
-  <a href="https://wagtail.org/">
-    <img alt="Wagtail" src="https://wagtail.org/static/img/wagtail.dbf60545a188.svg" width="100" />
+  <a href="https://www.medusa-commerce.com">
+    <img alt="Medusa" src="https://i.imgur.com/USubGVY.png" width="100" />
   </a>
 </p>
 
 <h1 align="center">
   Aurore Storefront Starter
 </h1>
-
-<p align="center">
-Medusa is an open-source headless commerce engine that enables developers to create amazing digital commerce experiences. This CMS backend is used to illustrate how it can be integrated with Medusa Next.JS starter.
-</p>
 
 > **Prerequisites**: To use the starter you should have the Aurore Medusa server running locally on port 9000 or deployed. Check out [aurore-medusa](https://github.com/traleor/aurore-medusa) for a quick setup.
 
@@ -46,10 +42,6 @@ The Medusa Next.js Starter is built with:
 
 # Quickstart
 
-## Deploy in 5 minutes
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/medusajs/nextjs-starter-medusa)
-
 ## Setting up the environment variables
 
 Navigate into your projects directory and get your enviroment variables ready:
@@ -61,10 +53,14 @@ mv .env.template .env.local
 
 ### Install dependencies
 
-Use Yarn to install all dependencies.
+Use Yarn, PNPM or NPM to install all dependencies.
 
 ```shell
 yarn
+# 
+pnpm i
+# 
+npm i
 ```
 
 ### Start developing
@@ -73,6 +69,10 @@ You are now ready to start up your project.
 
 ```shell
 yarn dev
+# 
+pnpm dev
+# 
+npm dev
 ```
 
 ### Open the code and start customizing
