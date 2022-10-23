@@ -3,7 +3,7 @@ import Image from "next/image"
 
 const Hero = () => {
   return (
-    <div className="h-[85vh] home-hero w-full relative">
+    <div className="h-[95vh] home-hero w-full relative">
       <div className="mt-5 text-white absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:text-left small:justify-end small:items-start small:p-32">
         <h1
           style={{ lineHeight: "1.1" }}

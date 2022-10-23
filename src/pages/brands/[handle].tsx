@@ -64,7 +64,7 @@ const BrandsPage: NextPageWithLayout = ({ brand }: any) => {
             {brand?.brand_collections.map((collection: any, index: number) => {
               return (
                 <Tab key={collection.handle} title={collection.title}>
-                  <div>
+                  <div className="brands__list">
                     {collection &&
                       collection.products.length > 0 &&
                       collection.products.map((p: any) => (
