@@ -18,6 +18,8 @@ import Card from "@modules/layout/templates/brand/Card"
 
 const BrandsPage: NextPageWithLayout = ({ brand }: any) => {
   const router = useRouter()
+  const images = ["cta_one.jpg", "cta_two.jpg", "cta_three.jpg", "cta_four.jpg"]
+
 
   console.log(process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL)
 
@@ -50,10 +52,16 @@ const BrandsPage: NextPageWithLayout = ({ brand }: any) => {
         )}
         <div className={styles.banner__image}>
           <div>
-            <img src="/images/image3.jpg" alt="brand name" />
+            <img
+              src={`/${images[Math.floor(Math.random() * images.length)]}`}
+              alt="brand name"
+            />
           </div>
           <div>
-            <img src="/images/image1.jpg" alt="brand name" />
+            <img
+              src={`/${images[Math.floor(Math.random() * images.length)]}`}
+              alt="brand name"
+            />
           </div>
         </div>
       </div>
