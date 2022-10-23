@@ -25,6 +25,7 @@ const BrandsPage: NextPageWithLayout = ({ brand }: any) => {
 
   // console.log("BRANDS_DETAILS: ", JSON.stringify(brand, null, 2))
 
+  // TODO: 
   // If the page is not yet generated, this will be displayed
   // initially until getStaticProps() finishes running
   if (router.isFallback) {
