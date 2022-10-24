@@ -59,9 +59,9 @@ Use Yarn, PNPM or NPM to install all dependencies.
 
 ```shell
 yarn
-# 
+# or
 pnpm i
-# 
+# or
 npm i
 ```
 
@@ -71,9 +71,9 @@ You are now ready to start up your project.
 
 ```shell
 yarn dev
-# 
+# or
 pnpm dev
-# 
+# or
 npm dev
 ```
 
