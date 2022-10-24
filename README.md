@@ -10,6 +10,8 @@
 
 > **Prerequisites**: To use the starter you should have the Aurore Medusa server running locally on port 9000 or deployed. Check out [aurore-medusa](https://github.com/traleor/aurore-medusa) for a quick setup.
 
+> **NB**: The wagtail CMS backend is not yet integrated
+
 # Overview
 
 ![aurore-cover](https://github.com/traleor/aurore-frontend/blob/main/public/cover.png)
